@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+  gitlab_statistics:
+    build: .
+    depends_on:
+      - elasticsearch
+
+  elasticsearch:
+    image: 'elasticsearch:alpine'
+    ports:
+      - '9200:9200'
+    environment:
+      ES_JAVA_OPTS: '-Xmx512m -Xms512m'
+    volumes:
+      - ./elasticsearch-data:/usr/share/elasticsearch/data
+
+  kibana:
+    image: 'kibana:latest'
+    ports:
+      - '5601:5601'
+    depends_on:
+      - elasticsearch
