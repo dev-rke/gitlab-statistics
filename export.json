@@ -101,16 +101,16 @@
     }
   },
   {
-    "_id": "1fa2b680-69af-11e7-95ea-7b6f32fffffa",
+    "_id": "fae963d0-69c6-11e7-a2bf-03d1b67dca72",
     "_type": "visualization",
     "_source": {
-      "title": "Top Filenames",
-      "visState": "{\"title\":\"Top Filenames\",\"type\":\"tagcloud\",\"params\":{\"scale\":\"linear\",\"orientation\":\"single\",\"minFontSize\":18,\"maxFontSize\":72},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"name.keyword\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
-      "uiStateJSON": "{}",
+      "title": "Project Type",
+      "visState": "{\"title\":\"Project Type\",\"type\":\"histogram\",\"params\":{\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":200},\"title\":{\"text\":\"filters\"}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":75,\"filter\":true,\"truncate\":100},\"title\":{\"text\":\"Unique count of _type\"}}],\"seriesParams\":[{\"show\":true,\"type\":\"histogram\",\"mode\":\"normal\",\"data\":{\"label\":\"Unique count of _type\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"_type\",\"customLabel\":\"\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"filters\",\"schema\":\"segment\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"/shopware/\",\"analyze_wildcard\":true}}},\"label\":\"ShopWare\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"/magento/\",\"analyze_wildcard\":true}}},\"label\":\"Magento\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"/typo3conf/\",\"analyze_wildcard\":true}}},\"label\":\"TYPO3\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"/symfony/\",\"analyze_wildcard\":true}}},\"label\":\"Symfony\"}]}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"legendOpen\":false}}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"gitlab_statistics\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"gitlab_statistics\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
       }
     }
   },
@@ -133,7 +133,7 @@
     "_type": "visualization",
     "_source": {
       "title": "Top Extensions",
-      "visState": "{\"title\":\"Top Extensions\",\"type\":\"tagcloud\",\"params\":{\"scale\":\"linear\",\"orientation\":\"single\",\"minFontSize\":18,\"maxFontSize\":72},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"ext.keyword\",\"size\":30,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "visState": "{\"title\":\"Top Extensions\",\"type\":\"tagcloud\",\"params\":{\"scale\":\"square root\",\"orientation\":\"single\",\"minFontSize\":14,\"maxFontSize\":75,\"hideLabel\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"ext.keyword\",\"size\":30,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
@@ -143,16 +143,16 @@
     }
   },
   {
-    "_id": "fae963d0-69c6-11e7-a2bf-03d1b67dca72",
+    "_id": "1fa2b680-69af-11e7-95ea-7b6f32fffffa",
     "_type": "visualization",
     "_source": {
-      "title": "Project Type",
-      "visState": "{\"title\":\"Project Type\",\"type\":\"histogram\",\"params\":{\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":200},\"title\":{\"text\":\"filters\"}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":75,\"filter\":true,\"truncate\":100},\"title\":{\"text\":\"Unique count of _type\"}}],\"seriesParams\":[{\"show\":true,\"type\":\"histogram\",\"mode\":\"normal\",\"data\":{\"label\":\"Unique count of _type\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"_type\",\"customLabel\":\"\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"filters\",\"schema\":\"segment\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"/shopware/\",\"analyze_wildcard\":true}}},\"label\":\"ShopWare\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"/magento/\",\"analyze_wildcard\":true}}},\"label\":\"Magento\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"/typo3conf/\",\"analyze_wildcard\":true}}},\"label\":\"TYPO3\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"/symfony/\",\"analyze_wildcard\":true}}},\"label\":\"Symfony\"}]}}],\"listeners\":{}}",
-      "uiStateJSON": "{\"vis\":{\"legendOpen\":false}}",
+      "title": "Top Filenames",
+      "visState": "{\"title\":\"Top Filenames\",\"type\":\"tagcloud\",\"params\":{\"scale\":\"square root\",\"orientation\":\"single\",\"minFontSize\":14,\"maxFontSize\":72},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"name.keyword\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"gitlab_statistics\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"gitlab_statistics\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   }
