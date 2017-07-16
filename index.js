@@ -1,4 +1,5 @@
 const path = require('path');
+const crypto = require('crypto');
 const waitOn = require('wait-on');
 const elasticsearch = require('elasticsearch');
 const gitlabModule = require('gitlab');
@@ -9,6 +10,8 @@ const waitOpts = {
   delay: 1000,
   interval: 1000,
   timeout: 100000,
+  // log: true,
+  // verbose: true,
 };
 
 waitOn(waitOpts, (err) => {
@@ -31,9 +34,9 @@ waitOn(waitOpts, (err) => {
   const es = new elasticsearch.Client({
     host: config.elasticsearch.url || 'elasticsearch:9200',
     log: config.elasticsearch.log || ['error', 'warning'],
-    sniffOnStart: true,
-    sniffInterval: 60000,
   });
+
+  const generateHash = input => crypto.createHash('sha256').update(input).digest('hex');
 
   // es.indices.delete({ index: INDEX });
 
@@ -52,10 +55,12 @@ waitOn(waitOpts, (err) => {
                     index: {
                       _index: INDEX,
                       _type: projectPath,
-                      _id: file.id,
+                      _id: generateHash(`${TIMESTAMP}_${projectPath}_${file.id}`),
                     },
                   });
                   files.push({
+                    uniqueFileId: generateHash(`${projectPath}_${file.id}`),
+                    id: file.id,
                     name: file.name,
                     path: file.path,
                     ext: path.extname(file.name),
@@ -70,5 +75,6 @@ waitOn(waitOpts, (err) => {
         });
       }
     });
+    console.log('Import finished.');
   });
 });
