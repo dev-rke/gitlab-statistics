@@ -16,7 +16,7 @@ to run the application:
 
 If you do not have docker, you need to setup
 1. elasticsearch
-1. kibana
+1. kibana 
 1. nodejs
 1. npm
 
@@ -28,10 +28,20 @@ Keep in mind that you might need to customize your elasticsearch server url insi
 1. setup a new access token by visiting [https://yourgitlabinstance.example.com/profile/personal_access_tokens](https://yourgitlabinstance.example.com/profile/personal_access_tokens)
 1. Rename config.example.js to config.js
 1. add your gitlab instance url and your private token
-1. run 
-```
-$ docker-compose up -d
-```
+1. setup the applications either using docker or npm:
+
+  * **when using docker:** run 
+    ```
+     $ docker-compose up -d --build
+    ```
+  
+  * **when using npm:** run
+    ```
+     $ npm install
+     $ npm start
+    ```
+
+
 1. visit your [Kibana](http://localhost:5601/app/kibana#/management/kibana/objects)-Instance and import the export.json file.
 1. Switch to the [Dashboards](http://localhost:5601/app/kibana#/dashboard/b5b52080-69ab-11e7-88d5-79ac22af4634) to analyze your data.
 
